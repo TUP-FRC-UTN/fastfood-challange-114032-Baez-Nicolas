@@ -1,0 +1,25 @@
+<div class="container">
+    <h1 class="text-center">Pendiente de Cocinar</h1>
+
+    <br>
+
+    <div *ngFor="let pedidos of oPedidosPendientes">
+        <label class="form-label col-md-2">({{ pedidos.number }}) - {{ pedidos.description }}</label>
+        <button class="btn btn-primary col-md-2" [disabled]="lBandera" (click)="cambiarEstado(pedidos)">Cocinar</button>
+    </div>
+
+</div>
+
+<hr>
+
+<div class="container">
+    <h1 class="text-center">Pedidos en Cocción</h1>
+
+    <br>
+
+    <div *ngFor="let pedidos of oPedidosCocinados">
+        <label class="form-label col-md-2">({{ pedidos.number }}) - {{ pedidos.description }}</label>
+        <button class="btn btn-primary" (click)="terminarPedido(pedidos)">Pedido Terminado!</button>
+    </div>
+
+</div>

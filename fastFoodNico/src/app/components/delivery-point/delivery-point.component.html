@@ -1,0 +1,11 @@
+<div class="container">
+    <h1 class="text-center">Delivery Point</h1>
+
+    <br>
+
+    <div *ngFor="let pedidos of oPedidosDelivery">
+        <label class="form-label col-md-2">({{ pedidos.number }}) - {{ pedidos.description }}</label>
+        <button class="btn btn-primary col-md-2" (click)="entregarPedido(pedidos)">Entregar</button>
+    </div>
+
+</div>

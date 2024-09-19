@@ -1,0 +1,31 @@
+<div class="container">
+    <h1 class="text-center">Ingrese su pedido</h1>
+
+    <form (ngSubmit)="enviarForm()" #myForm="ngForm">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" name="name" [(ngModel)]="name" id="name" placeholder="Ingresa tu nombre" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Descripción</label>
+            <textarea class="form-control" name="description" [(ngModel)]="description" id="description" rows="3" 
+            placeholder="Ingrese el pedido" required></textarea>
+        </div>
+        <button class="btn btn-primary" [disabled]="!myForm.valid">Enviar</button>
+    </form>
+</div>
+
+<hr>
+
+<div class="container">
+    <div class="row">
+        <app-pedidos-ingresados class="col-md-6"></app-pedidos-ingresados>
+        <app-pedidos-pendientes class="col-md-6"></app-pedidos-pendientes>
+    </div>
+</div>
+
+<hr>
+
+<div class="container">
+    <app-delivery-point class="col-md-12"></app-delivery-point>
+</div>

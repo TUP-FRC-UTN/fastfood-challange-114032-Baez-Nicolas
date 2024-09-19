@@ -1,0 +1,22 @@
+<div class="container">
+    <h1 class="text-center">Pedidos Creados</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-white">Numero</th>
+                <th class="text-white">Nombre</th>
+                <th class="text-white">Descripcion</th>
+                <th class="text-white">Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pedido of oListaPedidos">
+                <td class="text-white">{{ pedido.number }}</td>
+                <td class="text-white">{{ pedido.name }}</td>
+                <td class="text-white">{{ pedido.description }}</td>
+                <td class="text-white">{{ pedido.date | date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
